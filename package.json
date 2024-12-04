@@ -4,8 +4,8 @@
   "type": "module",
   "scripts": {
     "dev": " nodemon ./backend/server.js",
-    "build":"npm install && npm install --prefix frontend && npm run build --prefix frontend",
-    "start": " node ./backend/server.js"
+    "build":"npm install && npm install --prefix frontend --production=false && npm run build --prefix frontend",
+    "start": "node ./backend/server.js"
   },
   "devDependencies": {
     "@types/bun": "latest"
