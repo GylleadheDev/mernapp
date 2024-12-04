@@ -19,7 +19,7 @@ export default function Navbar() {
           color="text.alternative"
           fontWeight={'bold'}
           _hover={{ bg: '#00d1d8' }}
-          onClick={() => navigate('/about')}
+          onClick={onOpen}
         >
           Add
         </Button>
