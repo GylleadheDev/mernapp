@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": " nodemon ./backend/server.js",
-    "build":"npm install && npm install --prefix frontend --production=true && npm run build --prefix frontend",
-    "start": "node ./backend/server.js"
+    "dev": "NODE_ENV=development nodemon ./backend/server.js",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "NODE_ENV=production node ./backend/server.js"
   },
   "devDependencies": {
     "@types/bun": "latest"
@@ -19,5 +19,8 @@
     "express": "^4.21.1",
     "mongoose": "^8.8.3",
     "nodemon": "^3.1.7"
+  },
+  "optionalDependencies": {
+    "win-node-env": "^0.6.1"
   }
 }
