@@ -13,7 +13,7 @@ app.use(cors());
 
 const __dirname = path.resolve();
 
-app.use("/products" , ProductRoutes)
+app.use("/api/products", ProductRoutes);
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "/frontend/dist")));

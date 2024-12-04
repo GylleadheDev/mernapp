@@ -2,6 +2,7 @@ import { Button, Container, SimpleGrid , VStack , Alert } from '@chakra-ui/react
 import {useState , useEffect} from 'react'
 import { useProductsStore } from '../functions/ProductsFunctions'
 import ProductCard from './ProductCard'
+import { IoMdWarning } from "react-icons/io";
 
 const AllProducts = () => {
     const { getProducts , products } = useProductsStore()
@@ -23,7 +24,7 @@ const AllProducts = () => {
                 </SimpleGrid>
                 {products.length === 0 && (
                     <Alert bgColor={"#cf3524"} title="Invalid Fields" textColor={"black"} rounded={"md"}  fontWeight={"semibold"} >
-                    Você ainda não cadastrou nenhum produto , Por favor clique no botão de adicionar produto para vê-los aqui 
+                    <IoMdWarning size={20} /> Você ainda não cadastrou nenhum produto , Por favor clique no botão de adicionar produto para vê-los aqui 
                   </Alert>
                 )}
             </VStack>

@@ -10,9 +10,9 @@ export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
-    <div className="navbar p-8 md:p-4  flex flex-col items-center justify-around gap-4 scale-[0.9] md:scale-100 ">
+    <div className="navbar  md:p-4 m-auto  flex flex-col items-center justify-around gap-4 scale-[0.8] md:scale-100 ">
      
-      <div className="mt-10">
+      <div className="mt-10 flex flex-row gap-2">
         <Button
 
           leftIcon={<Icon as={MdAddCircleOutline} />}
