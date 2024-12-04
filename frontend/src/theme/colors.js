@@ -8,7 +8,8 @@ export const tokyoNightColors = {
     primary: '#c0caf5',
     secondary: '#a9b1d6',
     tertiary: '#7aa2f7',
-    alternative: '#7aa2f7'
+    alternative: '#24283b',
+    alternatives: '#7aa2f7'
 
   },
   accent: {

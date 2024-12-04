@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading, Icon, useDisclosure } from '@chakra-ui/react'
+import { Box, Button, Flex, Heading, Icon, IconButton, useDisclosure } from '@chakra-ui/react'
 import { FiInfo, FiPackage } from 'react-icons/fi'
 import {FaHome} from 'react-icons/fa'
 import { MdAddCircleOutline } from 'react-icons/md'
@@ -10,26 +10,27 @@ export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
-    <div className="navbar  md:p-4 m-auto  flex flex-col items-center justify-around gap-4 scale-[0.8] md:scale-100 ">
+    <div className="navbar px-10 md:p-4 m-auto  flex flex-col items-center justify-around gap-4 scale-[0.8] md:scale-100 ">
      
-      <div className="mt-10 flex flex-row gap-2">
-        <Button
-
-          leftIcon={<Icon as={MdAddCircleOutline} />}
-          colorScheme="purple"
-          variant="solid"
-          bg="accent.purple"
-          _hover={{ bg: 'accent.blue' }}
-          onClick={onOpen}
+      <div className="mt-2 flex flex-row gap-2">
+      <Button
+          leftIcon={<Icon as={FiPackage} />}
+          bg={'#fff'}
+          color="text.alternative"
+          fontWeight={'bold'}
+          _hover={{ bg: '#00d1d8' }}
+          onClick={() => navigate('/about')}
         >
-          Add Product
+          Add
         </Button>
 
         <Button
           leftIcon={<Icon as={FiPackage} />}
           variant="ghost"
-          color="text.primary"
-          _hover={{ bg: 'bg.tertiary' }}
+          bg={'#fff'}
+          color="text.alternative"
+          fontWeight={'bold'}
+          _hover={{ bg: '#00d1d8' }}
           onClick={() => navigate('/products')}
         >
           All Products
@@ -38,20 +39,21 @@ export default function Navbar() {
         <Button
           leftIcon={<Icon as={FiInfo} />}
           variant="ghost"
-          color="text.primary"
-          _hover={{ bg: 'bg.tertiary' }}
+          bg={'#fff'}
+          color="text.alternative"
+          fontWeight={'bold'}
+          _hover={{ bg: '#00d1d8' }}
           onClick={() => navigate('/about')}
         >
           About
         </Button>
-        <a
-          
-          onClick={() => navigate('/')}
-          
-          className="flex hover:cursor-pointer mx-4 btn hover:btn-primary btn-ghost justify-center items-center m-auto text-center "
-        >
-          <FaHome size={30} color="text.primary" />
-        </a>
+<IconButton   bg={'#fff'}
+          color="text.alternative"
+          fontWeight={'bold'}
+          _hover={{ bg: '#00d1d8' }}
+          onClick={() => navigate('/')}>
+  <FaHome size={20} />
+</IconButton>
       </div>
       <AddProductModal isOpen={isOpen} onClose={onClose} />
     </div>

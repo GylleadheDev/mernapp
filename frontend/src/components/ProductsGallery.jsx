@@ -23,8 +23,8 @@ const AllProducts = () => {
                     ))}
                 </SimpleGrid>
                 {products.length === 0 && (
-                    <Alert bgColor={"#cf3524"} title="Invalid Fields" textColor={"black"} rounded={"md"}  fontWeight={"semibold"} >
-                    <IoMdWarning size={20} /> Você ainda não cadastrou nenhum produto , Por favor clique no botão de adicionar produto para vê-los aqui 
+                    <Alert bgColor={"#cf3524"} title="Invalid Fields" gap={4} textColor={"black"} rounded={"md"}  fontWeight={"semibold"} >
+                    <IoMdWarning size={80} /> Você ainda não cadastrou nenhum produto , Por favor clique no botão de adicionar produto para vê-los aqui 
                   </Alert>
                 )}
             </VStack>
