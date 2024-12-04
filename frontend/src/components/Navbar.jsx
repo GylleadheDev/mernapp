@@ -10,7 +10,7 @@ export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
-    <div className="navbar  flex flex-col items-center justify-around gap-4 scale-[0.9] md:scale-100 ">
+    <div className="navbar p-8 md:p-4  flex flex-col items-center justify-around gap-4 scale-[0.9] md:scale-100 ">
      
       <div className="mt-10">
         <Button

@@ -16,7 +16,7 @@ const AllProducts = () => {
     return (
         <Container maxW='container.xl' p={12}>
             <VStack spacing={8}>
-                <SimpleGrid columns={{base: 2,md: 2,lg: 3}} spacing={7} w={"full"}>
+                <SimpleGrid columns={{base: 1,md: 2,lg: 3}} spacing={7} w={"full"}>
                     {products.map((product) =>(
                         <ProductCard key={product._id} product={product} />
                     ))}
