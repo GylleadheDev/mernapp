@@ -15,7 +15,7 @@ export const useProductsStore = create((set) => ({
       return { success: false, message: "All fields are required" };
     }
 
-    const res = await fetch("/products", {
+    const res = await fetch("/api/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
