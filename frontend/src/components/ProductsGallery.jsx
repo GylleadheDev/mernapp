@@ -5,10 +5,10 @@ import ProductCard from './ProductCard'
 import { IoMdWarning } from "react-icons/io";
 
 const AllProducts = () => {
-  const [products, setProducts] = useState(null);
+  const [products, setProducts] = useState();
   const [isLoading, setIsLoading] = useState(false);
 
-  const { getProducts } = useProductsStore();
+  const { getProducts , products } = useProductsStore();
 
   useEffect(() => {
     const fetchData = async () => {
