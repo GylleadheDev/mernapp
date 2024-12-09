@@ -23,7 +23,8 @@ const AllProducts = () => {
 
 
     return (
-        {isLoading ? (
+      <div>
+      {isLoading ? (
         <span className="loading loading-spinner loading-lg"></span>
       ) : (
         <Container maxW='container.xl' p={12}>
@@ -36,6 +37,8 @@ const AllProducts = () => {
             </VStack>
         </Container>
       )}
+      </div>
+        
     
     )
 }
