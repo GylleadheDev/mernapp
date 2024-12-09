@@ -32,9 +32,7 @@ const AllProducts = () => {
         <div>
           {/* Renderizar os produtos aqui */}
           {products && products.map((product) => (
-                    {products.map((product) =>(
                         <ProductCard key={product._id} product={product} />
-                    ))}
           ))}
         </div>
       )}
