@@ -57,7 +57,7 @@ export default function Home() {
                 colorScheme="cyan"
                 border={"0px"}
                 
-                className="btn animate-bounce "
+                className="btn "
               >
                 Acesse Aqui 😊
               </Button>
