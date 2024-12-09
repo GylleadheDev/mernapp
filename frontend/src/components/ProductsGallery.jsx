@@ -23,11 +23,7 @@ const AllProducts = () => {
 
 
     return (
-      <div>
-      {isLoading ? (
-        <span className="loading loading-spinner loading-lg"></span>
-      ) : (
-        <Container maxW='container.xl' p={12}>
+     <Container maxW='container.xl' p={12}>
             <VStack spacing={8}>
                 <SimpleGrid columns={{base: 1,md: 2,lg: 3}} spacing={7} w={"full"}>
                     {products.map((product) =>(
@@ -36,8 +32,6 @@ const AllProducts = () => {
                 </SimpleGrid>
             </VStack>
         </Container>
-      )}
-      </div>
         
     
     )
