@@ -5,7 +5,7 @@ import ProductCard from './ProductCard'
 import { IoMdWarning } from "react-icons/io";
 
 const AllProducts = () => {
-  const [products, setProducts] = useState();
+  const [prod, setProducts] = useState();
   const [isLoading, setIsLoading] = useState(false);
 
   const { getProducts , products } = useProductsStore();
