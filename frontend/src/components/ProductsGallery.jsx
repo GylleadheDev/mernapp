@@ -36,8 +36,6 @@ const AllProducts = () => {
             </VStack>
         </Container>
       )}
-    </div>
-        
     
     )
 }
