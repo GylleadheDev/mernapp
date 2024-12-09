@@ -27,7 +27,7 @@ const AllProducts = () => {
             <VStack spacing={8}>
                 <SimpleGrid columns={{base: 1,md: 2,lg: 3}} spacing={7} w={"full"}>
                   {isLoading ? (
-        <p>Carregando...</p>
+        <span className="loading loading-spinner m-auto loading-lg"></span>
       ) : (
         <div>
           {/* Renderizar os produtos aqui */}
