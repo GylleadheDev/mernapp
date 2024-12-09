@@ -26,10 +26,16 @@ const AllProducts = () => {
      <Container maxW='container.xl' p={12}>
             <VStack spacing={8}>
                 <SimpleGrid columns={{base: 1,md: 2,lg: 3}} spacing={7} w={"full"}>
-                  {isLoading ? (<span className="loading loading-spinner loading-lg"></span>) : ({products.map((product) =>(
-                        <ProductCard key={product._id} product={product} />
-                    ))})}
-                    
+                  {isLoading ? (
+        <p>Carregando...</p>
+      ) : (
+        <div>
+          {/* Renderizar os produtos aqui */}
+          {products && products.map((product) => (
+            <div key={product.id}>{product.name}</div>
+          ))}
+        </div>
+      )}
                 </SimpleGrid>
             </VStack>
         </Container>
