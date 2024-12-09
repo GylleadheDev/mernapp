@@ -5,9 +5,11 @@ import ProductCard from './ProductCard'
 import { IoMdWarning } from "react-icons/io";
 
 const AllProducts = () => {
-    const { getProducts , products } = useProductsStore()
+    const { getProducts , products } = useProductsStore();
+    const [loading ,setLoading] = useState(false)
 
     useEffect(() => {
+        setLoading(true)
         getProducts()
     }, [getProducts]);
     console.log("products : ",products);
@@ -22,11 +24,14 @@ const AllProducts = () => {
                         <ProductCard key={product._id} product={product} />
                     ))}
                 </SimpleGrid>
-                {products.length === 0 && (
+                {loading ? (
+                <span className="loading loading-spinner loading-lg"></span>
+                ):( {products.length === 0 && (
                     <Alert bgColor={"#cf3524"} title="Invalid Fields" gap={4} textColor={"black"} rounded={"md"}  fontWeight={"semibold"} >
                     <IoMdWarning size={80} /> Você ainda não cadastrou nenhum produto , Por favor clique no botão de adicionar produto para vê-los aqui 
                   </Alert>
-                )}
+                )})}
+               
             </VStack>
         </Container>
     
