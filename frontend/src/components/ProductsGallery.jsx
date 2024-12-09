@@ -5,18 +5,27 @@ import ProductCard from './ProductCard'
 import { IoMdWarning } from "react-icons/io";
 
 const AllProducts = () => {
-    const { getProducts , products } = useProductsStore();
-    const [loading ,setLoading] = useState(false)
+  const [products, setProducts] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-    useEffect(() => {
-        setLoading(true)
-        getProducts()
-    }, [getProducts]);
-    console.log("products : ",products);
+  const { getProducts } = useProductsStore();
 
+  useEffect(() => {
+    const fetchData = async () => {
+      setIsLoading(true);
+      const fetchedProducts = await getProducts();
+      setProducts(fetchedProducts);
+      setIsLoading(false);
+    };
+
+    fetchData();
+  }, [getProducts]);
 
 
     return (
+        {isLoading ? (
+        <span className="loading loading-spinner loading-lg"></span>
+      ) : (
         <Container maxW='container.xl' p={12}>
             <VStack spacing={8}>
                 <SimpleGrid columns={{base: 1,md: 2,lg: 3}} spacing={7} w={"full"}>
@@ -24,16 +33,11 @@ const AllProducts = () => {
                         <ProductCard key={product._id} product={product} />
                     ))}
                 </SimpleGrid>
-                {loading ? (
-                <span className="loading loading-spinner loading-lg"></span>
-                ):( {products.length === 0 && (
-                    <Alert bgColor={"#cf3524"} title="Invalid Fields" gap={4} textColor={"black"} rounded={"md"}  fontWeight={"semibold"} >
-                    <IoMdWarning size={80} /> Você ainda não cadastrou nenhum produto , Por favor clique no botão de adicionar produto para vê-los aqui 
-                  </Alert>
-                )})}}
-               
             </VStack>
         </Container>
+      )}
+    </div>
+        
     
     )
 }
